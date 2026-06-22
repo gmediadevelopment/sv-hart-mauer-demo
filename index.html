@@ -376,5 +376,15 @@
   </a>
 </div>
 
+<script>
+  // Mobiles Menü bei Klick auf einen Link automatisch schließen
+  document.querySelectorAll('.nav a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var t = document.getElementById('navtoggle');
+      if (t) t.checked = false;
+    });
+  });
+</script>
+
 </body>
 </html>

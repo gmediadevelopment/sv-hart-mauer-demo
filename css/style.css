@@ -287,13 +287,17 @@ p  { color: var(--text); }
   .nav-toggle-label span { width: 26px; height: 2.5px; background: var(--navy); border-radius: 2px; }
   .nav-toggle:checked ~ .nav {
     display: flex; position: absolute; top: 76px; left: 0; right: 0; flex-direction: column;
-    background: #fff; padding: 22px; gap: 16px; border-bottom: 1px solid var(--border); box-shadow: var(--shadow);
+    align-items: stretch; background: #fff; padding: 14px 22px 22px; gap: 2px;
+    border-bottom: 1px solid var(--border); box-shadow: var(--shadow);
+    max-height: calc(100vh - 76px); overflow-y: auto;
   }
-  .nav-item, .nav-item.has-dropdown { flex-direction: column; align-items: flex-start; width: 100%; gap: 8px; }
+  .nav-toggle:checked ~ .nav > a,
+  .nav-trigger { text-align: left; padding: 13px 0; border-bottom: 1px solid var(--border); }
+  .nav-item, .nav-item.has-dropdown { flex-direction: column; align-items: stretch; width: 100%; gap: 0; }
   .nav-item.has-dropdown::before { display: none; }
   .nav-item.has-dropdown > .nav-trigger::after { display: none; }
-  .dropdown { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; padding: 4px 0 0 14px; min-width: 0; }
-  .dropdown a { padding: 7px 0; }
+  .dropdown { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; padding: 4px 0 8px 16px; min-width: 0; }
+  .dropdown a { padding: 11px 0; border: 0; }
   .grid-3, .grid-2, .usp-grid, .testi-grid, .included, .team-grid { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr; }
   body { padding-bottom: 72px; } /* Platz für mobile bar */
