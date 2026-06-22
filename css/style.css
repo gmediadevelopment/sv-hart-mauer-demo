@@ -274,7 +274,7 @@ p  { color: var(--text); }
 }
 @media (max-width: 980px) {
   .hero-grid, .lp-hero-grid, .cta-grid, .area-grid { grid-template-columns: 1fr; gap: 36px; }
-  .hero-media { order: -1; }
+  /* Mobile/Tablet: immer zuerst Titel/Text/Buttons, dann Bild */
   .grid-3, .usp-grid, .testi-grid { grid-template-columns: 1fr 1fr; }
   .steps { grid-template-columns: 1fr 1fr; gap: 34px; }
   .step::after { display: none; }
