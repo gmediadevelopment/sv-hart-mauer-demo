@@ -9,7 +9,7 @@
 (function () {
   "use strict";
 
-  var ACCESS_KEY = "DEIN_WEB3FORMS_ACCESS_KEY"; // <- hier eintragen
+  var ACCESS_KEY = "b357c93d-4814-4902-ad42-978995dd5eb6";
 
   document.querySelectorAll("form.lead-form").forEach(function (form) {
     form.addEventListener("submit", function (event) {
