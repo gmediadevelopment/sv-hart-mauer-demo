@@ -308,19 +308,23 @@
     <div class="form-card">
       <h3>Anfrage senden</h3>
       <p class="sub">Kostenlos & unverbindlich. Antwort meist innerhalb 1 Stunde.</p>
-      <form onsubmit="alert('Demo-Formular – im Live-Betrieb wird die Anfrage versendet.');return false;">
-        <div class="field"><label>Name</label><input type="text" placeholder="Ihr Name" required></div>
-        <div class="field"><label>Telefon</label><input type="tel" placeholder="Für den Rückruf" required></div>
+      <form class="lead-form">
+        <input type="hidden" name="subject" value="Neue Anfrage über die Website">
+        <input type="hidden" name="from_name" value="Website-Formular Hartmann & Aufdermauer">
+        <input type="checkbox" name="botcheck" class="honeypot-field" tabindex="-1" autocomplete="off">
+        <div class="field"><label>Name</label><input type="text" name="name" placeholder="Ihr Name" required></div>
+        <div class="field"><label>Telefon</label><input type="tel" name="phone" placeholder="Für den Rückruf" required></div>
         <div class="field"><label>Anliegen</label>
-          <select>
+          <select name="service">
             <option>Schadengutachten</option><option>Wertgutachten</option>
             <option>Zeitwertgutachten</option><option>Batteriegutachten</option>
             <option>Kaufberatung</option><option>Verkaufsberatung</option>
           </select>
         </div>
-        <div class="field"><label>Nachricht</label><textarea rows="3" placeholder="Kurze Beschreibung Ihres Anliegens"></textarea></div>
-        <div class="field"><div class="field-file">📷 Schadenfotos anhängen (optional) – beschleunigt die Bearbeitung</div></div>
+        <div class="field"><label>Nachricht</label><textarea rows="3" name="message" placeholder="Kurze Beschreibung Ihres Anliegens"></textarea></div>
+        <div class="field"><div class="field-file">📷 Schadenfotos? Gerne per WhatsApp nachreichen</div></div>
         <button class="btn btn-primary btn-block btn-lg" type="submit">Anfrage absenden</button>
+        <p class="form-feedback" aria-live="polite"></p>
         <p class="form-fineprint">Mit dem Absenden stimmen Sie unserer Datenschutzerklärung zu.</p>
       </form>
     </div>
@@ -376,6 +380,7 @@
   </a>
 </div>
 
+<script src="js/forms.js"></script>
 <script>
   // Mobiles Menü bei Klick auf einen Link automatisch schließen
   document.querySelectorAll('.nav a').forEach(function (a) {
